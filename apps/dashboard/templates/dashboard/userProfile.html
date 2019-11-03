@@ -1,0 +1,148 @@
+{% include 'dashboard/headers.html' %}
+   
+    <div class="container text-center">
+        <div class="personalBoxprofile border rounded text-left">
+           
+            <form method="POST" action="/dashboard/profile/{{user.id}}/update">
+                {% csrf_token %}
+
+                <div class="form-group mb-2">
+                    Phone Number
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="phone_number" class="sr-only">PhoneNumber</label>
+                    <input name="phone_number" type="text" class="form-control" id="phonenumber" value="{{user.phone_number}}">
+                </div>
+
+
+                <div class="form-group mb-2">
+                    Change your email address
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="email" class="sr-only">New_email</label>
+                    <input name="email" type="email" class="form-control" id="email_update" value="{{user.email}}">
+                </div>
+           
+
+
+                <label for="inputState">University : {{user.location}}</label>
+
+                <div class="form-group mx-sm-3 mb-2">
+                    <select name="location" id="inputState" class="form-control" >
+                        <option>San Jose</option>
+                        <option>San Francisco</option>
+                        <option>Austin</option>
+                        <option>New York</option>
+                        <option>Florida</option>
+                    </select>
+                </div>
+
+
+
+                <h4>What are some of your fields of intrest</h4>
+                <div class="form-check">
+
+                    <div class="row">
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="interests" id="exampleRadios1"
+                                value="Human Resources">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Human Resourses
+                            </label>
+                        </div>
+
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="interests" id="exampleRadios1"
+                                value="Management">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Management
+                            </label>
+                        </div>
+
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="interests" id="exampleRadios1"
+                                value="Public Relations">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Public Relations
+                            </label>
+                        </div>
+
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="interests" id=""
+                                value="Communications">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Communications
+                            </label>
+                        </div>
+
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="interests" id="exampleRadios1"
+                                value="Software">
+                            <label class="form-check-label" for="software">
+                                Software
+                            </label>
+                        </div>
+
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="interests" id=""
+                                value="Health">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Health
+                            </label>
+                        </div>
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="interests" id="exampleRadios1"
+                                value="Education">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Education
+                            </label>
+                        </div>
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="interests" id="exampleRadios1"
+                                value="Finance">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Finance
+                            </label>
+                        </div>
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="interests" id="exampleRadios1"
+                                value="Business">
+                            <label class="form-check-label" for="business">
+                                Business
+                            </label>
+                        </div>
+
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="interests" id="exampleRadios1"
+                                value="Engineering">
+                            <label class="form-check-label">
+                                Engineering
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary">Submit interests</button>
+            </form>
+
+            <h4>Phone Number</h4>
+            {% if user.phone_number %}
+            {{user.phone_number}}
+            {% else %}
+            You haven 't entered a phone number yet
+            {% endif %}
+            <h4>Email Address</h4>
+            {{user.email}}
+            <h4>Location/University</h4>
+            {{user.location}}
+            <h4>Listed Field of Intrest</h4>
+            {% for interest in user.career_interests.all %}
+            #{{interest.name}} 
+            {% endfor %}
+            
+        </div>
+    </div>
+
+    <!--end of container-->
+</body>
+
+</html>

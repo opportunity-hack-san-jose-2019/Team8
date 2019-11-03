@@ -1,0 +1,7 @@
+{% include 'dashboard/headers.html' %}
+
+{% for volunteer in volunteers %}
+<p>{{volunteer}}</p>
+<a href="/dashboard/profile/{{volunteer.id}}">Profile</a>
+{% endfor %}
+{% include 'dashboard/footers.html' %}

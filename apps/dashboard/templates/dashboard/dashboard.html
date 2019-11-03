@@ -19,7 +19,7 @@
                         {% for event in events %}
                         
                         <tr>
-                            <th scope="row">{{event.name}}</th>
+                            <th scope="row"><a href="/dashboard/events/{{event.id}}">{{event.name}}</a></th>
                             <td>{{event.location}}</td>
                             <td>{{ event.end_time|date:"f d/m/Y" }}</td>
                             <td>{{ event.start_time|date:"f d/m/Y" }}</td>
@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <div class="jumbotron" id="enrolledEvents">
+    <!-- <div class="jumbotron" id="enrolledEvents">
         <div class="row">
             <div class="col-10 center-box  border  rounded pb-3 personalBox">
                 <p>Enrolled Events</p>
@@ -83,7 +83,7 @@
             </div>
         </div>
 
-    </div>
+    </div> -->
 
 
 {% include 'dashboard/footers.html' %}

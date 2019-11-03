@@ -1,12 +1,12 @@
 from django.shortcuts import render
-
+from .models import *
 # Create your views here.
 def event_detail(request,id):
     event = Event.objects.get(id=id)
     context = {
         'event': event
     }
-    return render(request, 'event_detail.html', context)
+    return render(request, 'events/event_detail.html', context)
 
 def events(request):
     events = Event.objects.all()
