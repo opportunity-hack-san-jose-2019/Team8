@@ -1,0 +1,21 @@
+.rightLink {
+  padding: 5px 0px 0px 6px;
+}
+
+.loginBox {
+  max-height: 50%;
+  max-width: 50%;
+  margin: 0em auto;
+  box-shadow: 5px 10px 8px #888888;
+}
+
+.jumbotron {
+  background-color: rgb(160, 218, 229);
+  color: whitesmoke;
+
+  margin: 0;
+}
+
+h1 {
+  font-weight: bolder;
+}

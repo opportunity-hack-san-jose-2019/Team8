@@ -1,0 +1,43 @@
+<div class="jumbotron jumbotron-fluid text-center borded rounded">
+    <h1 class="display-4">Register</h1>
+</div>
+<form action="student_register" method="POST" id="registration">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input name="username" type="text" class="form-control" id="first_name">
+    </div>
+
+    <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input name="first_name" type="text" class="form-control" id="first_name">
+    </div>
+    <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input name="last_name" type="text" class="form-control" id="last_name">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input name="email" type="text" class="form-control" id="email_register">
+        <span id="emailWarning" class="form-text text-muted"></span>
+    </div>
+    <div class="form-group">
+        <label for="studentID">Student Id</label>
+        <input name="studentID" type="text" class="form-control" id="register_student_id" placeholder="Student Id">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input name="password" type="password" class="form-control" id="register_password" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="confirm_password">Password</label>
+        <input name="confirm_password" type="password" class="form-control" id="confirm_password"
+            placeholder="Confirm Password">
+    </div>
+
+
+    <div class="form-group text-center b-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href='#' class="rightLink ajax_click" url="/login_insert">Log In</a>
+    </div>
+</form>

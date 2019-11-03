@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
+        integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .rightLink {
+            padding: 5px 0px 0px 6px;
+        }
+
+        .loginBox {
+            max-height: 50%;
+            max-width: 50%;
+            margin: 0em auto;
+            box-shadow: 5px 10px 8px #888888;
+            padding: 1em;
+            
+        }
+
+        .jumbotron {
+            background-color: rgb(160, 218, 229);
+            color: whitesmoke;
+           
+            margin:0;
+        }
+
+        h1 {
+            font-weight: bolder;
+        }
+    </style>
+
+    {% load static %}
+    <title>LevelUp</title>
+</head>
+
+<body>
+
+    <h1>HEADDER/NAV BAR</h1>
+
+
+    <div class="personalContainer">
+        <div id="login_reg" class="loginBox">
+        <div class="jumbotron jumbotron-fluid text-center border rounded">
+            <h1 class="display-4">Login</h1>
+        </div>
+        
+        <form action='login' method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input name="username" type="text" class="form-control" id="usernameInput" aria-describedby="usernameHelp"
+                    placeholder="Enter username">
+        
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <div class="form-group text-center b-3">
+                <button type="submit" class="btn btn-primary">Log In</button>
+                <a href='#' class="rightLink ajax_click" url="/register_insert">Register</a>
+            </div>
+        </form>
+
+        </div>
+    </div>
+
+    <!-- <div class="container text-center text-monospace">
+        {% for message in messages %}
+        <p class="lead"> {{ message }}</p>
+        {% endfor %}
+    </div>
+    <div class="container-fluid text-monospace">
+        <div class='row'>
+
+            <div class="col">
+                <div class="jumbotron jumbotron-fluid text-center">
+                    <hi class="display-4">Register</hi>
+                </div>
+            </div>
+            <div class="col">
+                <div class="jumbotron-fluid jumbotron text-center">
+                    <hi class="display-4">Login</hi>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col ">
+                <div class="container">
+                    <form action="student_register" method="POST" id="registration">
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <label for="username">Username</label>
+                            <input name="username" type="text" class="form-control" id="first_name">
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="first_name">First Name</label>
+                            <input name="first_name" type="text" class="form-control" id="first_name">
+                        </div>
+                        <div class="form-group row">
+                            <label for="last_name">Last Name</label>
+                            <input name="last_name" type="text" class="form-control" id="last_name">
+                        </div>
+                        <div class="form-group row">
+                            <label for="email">Email</label>
+                            <input name="email" type="text" class="form-control" id="email_register">
+                            <span id="emailWarning" class="form-text text-muted"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label for="studentID">Student Id</label>
+                            <input name="studentID" type="text" class="form-control" id="register_student_id"
+                                placeholder="Student Id">
+                        </div>
+                        <div class="form-group row">
+                            <label for="password">Password</label>
+                            <input name="password" type="password" class="form-control" id="register_password"
+                                placeholder="Password">
+                        </div>
+                        <div class="form-group row">
+                            <label for="confirm_password">Password</label>
+                            <input name="confirm_password" type="password" class="form-control" id="confirm_password"
+                                placeholder="Confirm Password">
+                        </div>
+
+
+                        <div class="form-group row">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="col">
+                <div class='container'>
+                    <form action='login' method="POST">
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <label for="username">Username</label>
+                            <input name="username" type="text" class="form-control" id="usernameInput"
+                                aria-describedby="usernameHelp" placeholder="Enter username">
+
+                        </div>
+                        <div class="form-group row">
+                            <label for="password">Password</label>
+                            <input name="password" type="password" class="form-control" id="password"
+                                placeholder="Password">
+                        </div>
+                        <div class="form-group row">
+                            <button type="submit" class="btn btn-primary">Log In</button>
+                        </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div> -->
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script src="{% static 'js/users/main.js' %}"></script>
+
+</html>

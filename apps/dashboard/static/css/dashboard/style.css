@@ -1,0 +1,60 @@
+body {
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(250, 244, 237),
+    #f3f3f3,
+    #f3f3f3,
+    rgb(250, 244, 237)
+  );
+}
+
+#logo {
+  width: 5em;
+  margin-left: 3em;
+}
+
+nav {
+  background-color: #f06e78e3;
+}
+
+.table {
+  background-color: rgb(245, 245, 245, 0.55);
+}
+
+p {
+  background-color: rgba(245, 245, 245, 0.76);
+  font-size: 20px;
+  margin-top: 1em;
+}
+
+span {
+  font-weight: bold;
+}
+.jumbotron {
+  margin: 0em;
+}
+
+#pastEvents {
+  background-color: rgba(2, 41, 41, 0.416);
+}
+
+#enrolledEvents {
+  background-color: rgb(160, 218, 229, 0.55);
+}
+
+#upcomingEvents {
+  background-color: rgba(23, 243, 23, 0.3);
+}
+
+.personalBox {
+  background-color: rgba(245, 245, 245, 0.781);
+  margin-left: 7%;
+  margin-top: 1em;
+}
+#main-nav{
+    color: #FFFFFF
+}
+.nav-link{
+     color: #FFFFFF
+}
+

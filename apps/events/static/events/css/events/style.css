@@ -1,0 +1,33 @@
+body {
+  background-image: linear-gradient(
+    to right bottom,
+    #f3f3f3,
+    #f3f3f3,
+    rgb(250, 244, 237)
+  );
+  /* background-image: linear-gradient(to right bottom, rgb(253, 43, 43), rgb(194, 38, 38), rgb(223, 46, 46));; */
+  /* background-color: #F06E78; */
+}
+
+/* .container {
+            background-color: #A0DAE5;
+        } */
+.jumbotron {
+  background-color: rgb(160, 218, 229, 0.55);
+}
+
+#logo {
+  width: 5em;
+  /* margin-left: 3em; */
+  /* : 10%; */
+}
+
+nav {
+  background-color: rgb(240, 110, 120, 0.89);
+  /* margin-left: 3em; */
+}
+
+span {
+  /* background-color: yellow; */
+  font-weight: bold;
+}
