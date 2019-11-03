@@ -70,15 +70,17 @@ def logout_view(request):
 
 def volunteers(request):
     context = {
-        'volunteers': User.objects.get(is_volunteer=True)
+        'volunteers': User.objects.filter(is_volunteer=True)
     }
     return render(request, 'users/volunteers.html', context)
 
 def fellows(request):
     context = {
-        'fellows': User.objects.get(is_fellow=True)
+        'fellows': User.objects.filter(is_fellow=True)
     }
     return render(request, 'users/fellows.html', context)
+
+
     
 
 

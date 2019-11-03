@@ -47,13 +47,13 @@ class User(AbstractUser):
     is_planner = models.BooleanField(default=False)
     is_volunteer = models.BooleanField(default=False)
     is_fellow = models.BooleanField(default=False)
-
+    
     #Volunteer fields
     company = models.CharField(max_length=255, blank=True, null=True)
 
     #All
-    phone_number = models.IntegerField(null=True, blank=True)
-
+    phone_number = models.CharField(max_length=15,null=True, blank=True)
+    location = models.CharField(max_length=15,null=True, blank=True)
     objects = CustomUserManager()
     
     def __str__(self):

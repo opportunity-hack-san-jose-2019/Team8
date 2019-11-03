@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
-        integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
-    <title>Interviewers Rubric</title>
+{% include 'dashboard/headers.html' %}
     <style>
         body {
             background-image: linear-gradient(to right bottom, #f3f3f3, #f3f3f3, #F2E5D7);
@@ -38,36 +29,31 @@
             /* margin-left: 3em; */
         }
 
-        /* body {
-            background-color: ;
-        } */
+    
     </style>
+
 </head>
 
 <body>
 
 
-    <nav class="navbar navbar-light ">
-        <a class="navbar-brand" href="https://bebraven.org/">
-            <img src="braven-logo.png" id="logo" class="d-inline-block align-top" alt="bravenLogo">
-        </a>
-    </nav>
 
-    <div class="container pb-3">
+    <div class="container pt-3 pb-3">    
+            <h4 class="text-center mb-0">
+                <span>{{interview.interviewer}}</span>, please fill in the feed back for how <span>{{interviewer.fellow}}</span> did in
+                their mock
+                interview?
+            </h4>
+     
+     
 
-
-
-        <p id="greeting"> <span>Walt Disney</span>, please fill in the feed back for how <span>Travis</span> did in his mock
-            interview?</p>
-        <hr>
-
-        <div class="row">
-            <div class="container">
-                <div class="col">
-                    <p class="m-0">10 points - Exceeds or meets expectations</p>
-                    <p class="m-0">8 points - Somewhat meets expectations</p>
-                    <p class="m-0">6 points - Still developing this skill</p>
-                    <p class="m-0">0 points - Does not meet expectations</p>
+        <div class="row mt-1">
+            <div class="container ">
+                <div class="col p-3 ">
+                    <p class="m-0 p-3">10 points - Exceeds or meets expectations</p>
+                    <p class="m-0 p-3">8 points - Somewhat meets expectations</p>
+                    <p class="m-0 p-3">6 points - Still developing this skill</p>
+                    <p class="m-0 p-3">0 points - Does not meet expectations</p>
                 </div>
             </div>
         </div>
@@ -78,14 +64,14 @@
             <div class="form-check">
                 <div class="col">
                     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                        value="option1" checked>
+                        value="10" checked>
                     <label class="form-check-label" for="exampleRadios1">
                         Exceeds expecationss
                     </label>
                 </div>
                 <div class="col">
                     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                        value="option1" checked>
+                        value="8" checked>
                     <label class="form-check-label" for="exampleRadios1">
                         Somewhat meets expectations
                     </label>
@@ -93,14 +79,14 @@
                 </div>
                 <div class="col">
                     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                        value="option1" checked>
+                        value="6" checked>
                     <label class="form-check-label" for="exampleRadios1">
                         Still developing the skill
                     </label>
                 </div>
                 <div class="col">
                     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                        value="option1" checked>
+                        value="0" checked>
                     <label class="form-check-label" for="exampleRadios1">
                         Does not meet expecations
                     </label>
