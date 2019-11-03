@@ -16,7 +16,9 @@ body {
 nav {
   background-color: #f06e78e3;
 }
-
+.lead{
+  background-color: inherit
+}
 .table {
   background-color: rgb(245, 245, 245, 0.55);
 }

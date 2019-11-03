@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
+        integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Creating Event</title>
+    <style>
+        .personalBox {
+            background-image: linear-gradient(to right bottom, rgb(160, 218, 229), rgb(121, 218, 238));
+            width: 75%;
+            color: whitesmoke;
+            display: inline-block;
+            margin: 0px auto 2em auto;
+            border-radius: 3em;
+            box-shadow: 5px 10px 8px #888888;
+            padding: 2em;
+        }
+
+        .container {
+            padding-top: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'dashboard/headers.html' %}
+    <div class="container text-center">
+        <div class="personalBox border rounded text-left">
+           
+            <form action="/dashboard/events/create_event", method=POST>
+                
+                <div class="form-group mb-2">
+                        Name of Event
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="phonenumber" class="sr-only">Name of Event</label>
+                        <input type="password" class="form-control" id="phonenumber" placeholder="Best Event">
+                    </div>
+                <label for="inputState">University/Loaction</label>
+                    <input name="location" type="text">
+                
+
+
+                <label for="startDate">Start Date : </label>
+                <input type="datetime-local" id="startDate" name="startDate">
+
+
+                <label for="endDate">End Date : </label>
+                <input type="datetime-local" id="startDate" name="endDate">
+
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea name="description"class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+            <!-- <h1>Hi Abby/Walt Disney</h1>
+            <hr>
+            <form action="BLAHBLAH">
+                for first time click here, ie once someone has registerd
+
+                <div class="form-group mb-2">
+                    Phone Number
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="phonenumber" class="sr-only">PhoneNumber</label>
+                    <input type="password" class="form-control" id="phonenumber" placeholder="123-456-7890">
+                </div>
+
+
+                <div class="form-group mb-2">
+                    Change your email address
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="phonenumber" class="sr-only">New_email</label>
+                    <input type="password" class="form-control" id="phonenumber" placeholder="new_email@email.com">
+                </div>
+                <div class="form-group mb-2">
+                    Change your password
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="phonenumber" class="sr-only">Change PassWord</label>
+                    <input type="password" class="form-control" id="phonenumber" placeholder="ChangedPassword">
+                </div>
+
+
+
+
+
+
+                <h4>What are some of your fields of intrest</h4>
+                <div class="form-check">
+
+                    <div class="row">
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1"
+                                value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Human Resourses
+                            </label>
+                        </div>
+
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1"
+                                value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Management
+                            </label>
+                        </div>
+
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1"
+                                value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Public Relations
+                            </label>
+                        </div>
+
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1"
+                                value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Communications
+                            </label>
+                        </div>
+
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1"
+                                value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Softwear
+                            </label>
+                        </div>
+
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1"
+                                value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Health
+                            </label>
+                        </div>
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1"
+                                value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Education
+                            </label>
+                        </div>
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1"
+                                value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Fiance
+                            </label>
+                        </div>
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1"
+                                value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Business
+                            </label>
+                        </div>
+
+                        <div class="col-3">
+                            <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1"
+                                value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Engineering
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-outline-primary">gti commit -m 'change me biiiiiiii'</button>
+            </form>
+
+            <h4>Phone Number</h4>
+            <p>555-555-5555</p>
+            <h4>Email Address</h4>
+            <p>yolo.yolo@yolocounty.gov</p>
+            <h4>Location/University</h4>
+            <p>San Jose Spartans</p>
+            <h4>Listed Field of Intrest</h4>
+            <p>Health, Finance </p>
+            <button class="btn btn-outline-primary">Go Back</button>
+        </div> -->
+        </div>
+
+        <!--end of container-->
+</body>
+
+</html>

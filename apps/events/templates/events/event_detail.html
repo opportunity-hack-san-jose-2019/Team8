@@ -1,58 +1,45 @@
 {% include 'dashboard/headers.html' %}
 
 
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">{{event.name}}</h1>
-            <p class="lead">{{event.location}}</p>
-            <p class="lead">{{event.date}}</p>
-        </div>
-    </div>
+<div class="jumbotron jumbotron-fluid">
+    
     <div class="container">
-        <table class="table border table-hover">
-            <thead style="background-color: rgb(59, 53, 97, 0.85); color: #f3f3f3;">
-                <tr>
-                    <th scope="col">Interview Time</th>
-                    <th scope="col">Interviewer</th>
-                    <th scope="col">Company</th>
-                    <th scope="col">Rubric</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">{{interview.time}}</th>
-                    <td>{{interview.interviewer}}</td>
-                    <td>{{interview.interviewer.company}}</td>
-                    <td><a href="urltorubric">Rubric</a></td>
-                </tr>
-
-                <tr>
-                    <th scope="row">{{interview.time}}</th>
-                    <td>{{interview.interviewer}}</td>
-                    <td>{{interview.interviewer.company}}</td>
-                    <td><a href="urltorubric">Rubric</a></td>
-                </tr>
-
-                <tr>
-                    <th scope="row">{{interview.time}}</th>
-                    <td>{{interview.interviewer}}</td>
-                    <td>{{interview.interviewer.company}}</td>
-                    <td><a href="urltorubric">Rubric</a></td>
-                </tr>
-                <tr>
-                    <th scope="row">{{interview.time}}</th>
-                    <td>{{interview.interviewer}}</td>
-                    <td>{{interview.interviewer.company}}</td>
-                    <td><a href="urltorubric">Rubric</a></td>
-                </tr>
-                <tr>
-                    <th scope="row">{{interview.time}}</th>
-                    <td>{{interview.interviewer}}</td>
-                    <td>{{interview.interviewer.company}}</td>
-                    <td><a href="urltorubric">Rubric</a></td>
-                </tr>
-            </tbody>
-
-        </table>
+        
+        <a href="/dashboard/schedule">Schedule Interviews</a>
+        <h1 class="display-4">{{event.name}}</h1>
+        <p class="lead">{{event.location}}</p>
+        <p class="lead">{{event.start_time}}</p>
     </div>
+</div>
+<div class="container">
+
+    <table class="table border table-hover">
+        <p class="lead">this is the staffs view. Volunteers and Fellows will only be able to see their scheduled events for the
+            day. </p>
+        <thead style="background-color: rgb(59, 53, 97, 0.85); color: #f3f3f3;">
+            <tr>
+                <th scope="col">Interview Time</th>
+                <th scope="col">Interviewer</th>
+                <th scope="col">Company</th>
+                <th scope="col">Rubric</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for interview in interviews%}
+            <tr>
+
+                <th scope="row">{{interview.start_time}}</th>
+                <td>{{interview.interviewer}}</td>
+                <td>{{interview.interviewer.company}}</td>
+                <td><a href="/dashboard/events/interview/{{interview.id}}">Rubric</a></td>
+
+            </tr>
+            {% endfor %}
+
+
+
+        </tbody>
+
+    </table>
+</div>
 {% include 'dashboard/footers.html' %}

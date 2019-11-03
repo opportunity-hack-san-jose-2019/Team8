@@ -1,0 +1,31 @@
+{% include "dashboard/headers.html" %}
+
+
+<p class="lead">
+    With more time these interviews will be scheduled automatically, staff will be able to edit them from event page.
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Volunteer</th>
+            <th scope="col">VolunteerId</th>
+            <th scope="col">Student</th>
+            <th scope="col">Student ID</th>
+            <th scope="col">Confidence</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        {% for result in results %}
+        <tr>
+
+            {% for field in result%}
+            <th scope="row">{{field}}</th>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% include "dashboard/footers.html" %}
+
